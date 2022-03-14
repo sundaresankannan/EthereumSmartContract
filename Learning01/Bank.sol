@@ -3,12 +3,17 @@ pragma solidity ^0.8.0;
 /*
  A Simple Bank Application using Solidity for learning purpose 
 */
+
+/*
+A Bank interface to do a basic operation
+*/
 interface iBank{
     function deposit(address _address,uint _value) external;
     function withdraw(address _address,uint _value) external;
     function getBalance(address _address) external  view returns(uint);
 }
 
+/* Personal Details Contract*/
 contract PersonalDetails {
     
     struct PersonalInfo{        
@@ -30,6 +35,7 @@ contract PersonalDetails {
     
 }
 
+/* Bank Contract implementing  PersonalDetails and Bank interface Contract*/
 
 contract Bank is PersonalDetails,iBank{
     
